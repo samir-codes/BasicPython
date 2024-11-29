@@ -18,8 +18,16 @@ def main():
         print("4. View Item")
         print("5. Exit\n")
         
+        try: 
+            user_choice = int(input("Enter your choice (1-5): "))
+        except ValueError:
+            print("\tInvalid input. Please enter a number between 1 to 5.")
+            continue
         
-        user_choice = int(input("Enter your choice (1-5): "))
+        
+        while not (user_choice >= 1 and user_choice <= 5):
+            user_choice = int(input("\tError! Enter your choice (1-5): "))
+            
         print()
         
         if (user_choice == 1):
