@@ -10,12 +10,14 @@ class Inventory:
         
         
     def add_item(self,name,category,quantity,price):
+        name = name.strip().lower()
         item = Item(name,category,quantity,price)
         self.items.append(item)
         self.save_inventory()
         print(f"\nAdded '{name}' to the inventory.")
         
     def remove_item(self,name):
+        name = name.strip().lower()
         for item in self.items:
             if item.name == name:
                 self.items.remove(item)
@@ -25,6 +27,7 @@ class Inventory:
         print(f"\nItem not found.")
         
     def update_item(self,name,quantity = None, price = None):
+        name = name.strip().lower()
         for item in self.items:
             if item.name == name:
                 if quantity is not None:

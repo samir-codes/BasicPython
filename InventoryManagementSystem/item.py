@@ -1,9 +1,9 @@
 class Item:
     def __init__(self,name,category,quantity,price):
-        self.name = name.lower()
-        self.category = category.lower()
-        self.quantity = quantity.lower()
-        self.price = price.lower()
+        self.name = name.strip().lower()
+        self.category = category.strip().lower()
+        self.quantity = int(quantity)
+        self.price = float(price)
         
     # convert item to dictionary for saving to JSON file
     def to_dict(self):
